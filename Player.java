@@ -6,6 +6,7 @@
 
 public class Player
 {
+	String name;
 	//constructor
 	public Player(String name)
 	{

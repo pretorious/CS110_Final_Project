@@ -1,32 +1,29 @@
-/*
-	Preston Libby
-	CS 110
-	Assignment 10
-*/
+
+import java.util.ArrayList;
 
 public class PlayerDeck extends Deck
 {
-	final public CARDS_IN_PLAYER_DECK = 26;
-	private Card[] deck;
-	private int cardCount;
-	
+	private final int INITIAL_DECK_SIZE = 26;
+	private ArrayList<Card> playerDeck = new ArrayList<Card>();
+	public int cardCount;
 
-	public PlayerDeck()
+	public PlayerDeck(Deck mainDeck)
 	{
-		cutDeck();
-		
-	}
-
-	
-	public void cutDeck(Deck fullDeck)
-	{
-		for (int i = 0; i <= CARDS_IN_PLAYER_DECK; i++)
+		for (int i = 0; i <= INITIAL_DECK_SIZE; i++)
 		{
-			Card card = fullDeck.dealCard();
-			deck[i] = card;
+			Card card = mainDeck.dealCard();
+			playerDeck.add(card);
 			cardCount++;
 		}
 	}
 
+	public void addCard(Card card)
+	{
+		playerDeck.add(card);
+	}
 
+	public void removeCard(Card card)
+	{
+		playerDeck.remove(card);
+	}
 }

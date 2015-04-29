@@ -7,18 +7,18 @@
 public class Card
 {
 	//constants
-	final public int SPADES = 1;
-	final public int CLUBS = 2;
-	final public int HEARTS = 3;
-	final public int DIAMONDS = 4;
-	final public int ACE = 5;
-	final public int KING = 6;
-	final public int QUEEN = 7;
-	final public int JACK = 8;
+	final public static int SPADES = 1;
+	final public static int CLUBS = 2;
+	final public static int HEARTS = 3;
+	final public static int DIAMONDS = 4;
+	final public static int JACK = 11;
+	final public static int QUEEN = 12;
+	final public static int KING = 13;
+	final public static int ACE = 14;
 	private int rank;
 	private int suit;
 	//constructor
-	public Card(int suit, int rank)
+	public Card(int rank, int suit)
 	{
 		this.suit = suit;
 		this.rank = rank;
@@ -35,9 +35,9 @@ public class Card
 	{
 		return rank;
 	}
-	public boolean equals(Card card, Card otherCard)
+	public boolean equals(Card otherCard)
 	{
-		if (card.getRank() == otherCard.getRank() && card.getSuit() == otherCard.getSuit())
+		if (this.getRank() == otherCard.getRank())
 			return true;
 		else
 			return false;
@@ -46,5 +46,6 @@ public class Card
 	public String toString()
 	{
 		String str = "This is a " + rank + " of " + suit;
+		return str;
 	}
 }
