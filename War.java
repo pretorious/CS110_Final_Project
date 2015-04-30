@@ -11,6 +11,10 @@ public class War
 	private final int NUM_WAR_DRAWS = 2;	//number of cards each player draws in event of a war
 	public static String winner = "none";
 
+	/**
+	Constructor
+	Default constructor initializes players, main deck, and player decks.
+	*/
 	public War()
 	{
 		//create two players
@@ -32,6 +36,14 @@ public class War
 	}
 
 	//check if either player runs out of cards
+	/**
+	@param player1
+	@param player2
+	@param p1Deck
+	@param p2Deck
+	checkWinner method checks both players for empty player decks. If either player
+	has 0 cards, they lose. The other player is marked as winner.
+	*/
 	public String checkWinner(Player player1, Player player2, PlayerDeck p1Deck, PlayerDeck p2Deck)
 	{
 		if (p1Deck.cardCount == 0 || p2Deck.cardCount == 0)
@@ -57,6 +69,9 @@ public class War
 	}
 
 	//if no loser
+	/**
+	
+	*/
 	public void playRound(PlayerDeck p1Deck, PlayerDeck p2Deck, WonCardsPile p1Pile, WonCardsPile p2Pile)
 	{
 	//deal cards and compare

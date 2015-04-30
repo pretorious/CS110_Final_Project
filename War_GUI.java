@@ -33,7 +33,14 @@ public class War_GUI extends JFrame
       //Names
       JLabel player1 = new JLabel("Player 1");
       JLabel player2 = new JLabel("Player 2");
-
+      
+      north.add(title);
+      
+      add(north);
+      add(south);
+      add(east);
+      add(west);
+      
       //pack and display the window
       pack();
       
